@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 
+set(CMAKE_CXX_FLAGS_DEBUG "-w")
+set(CMAKE_CXX_FLAGS_MINSIZEREL "-w")
+set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-w")
+set(CMAKE_CXX_FLAGS_RELEASE "-w")
+
 # manage 3rd party libraries with "hunter"
 if(NOT APPLE)
     set(HUNTER_BUILD_SHARED_LIBS ON)
