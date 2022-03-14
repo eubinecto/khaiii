@@ -47,7 +47,8 @@ class CustomBuild(build):
         build_dir = '{}/build'.format(_SRC_NAME)
         os.makedirs(build_dir, exist_ok=True)
         # so that the installation is compatible with newer versions of Ubuntu
-        subprocess.check_call('cmake -E env CXXFLAGS="-w" cmake ..', cwd=build_dir, shell=True)
+        subprocess.check_call("export CXXFLAGS=-w", cwd=build_dir, shell=True)
+        subprocess.check_call("cmake ..", cwd=build_dir, shell=True)
         subprocess.check_call('make all resource', cwd=build_dir, shell=True)
         shutil.rmtree('khaiii/lib', ignore_errors=True)
         shutil.copytree('{}/lib'.format(build_dir), 'khaiii/lib')
