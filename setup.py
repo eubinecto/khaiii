@@ -89,7 +89,7 @@ setup(
     license='Apache 2.0',
     packages=['khaiii', ],
     include_package_data=True,
-    install_requires=[],
+    install_requires=["cmake>=3.22.2"],
     setup_requires=['pytest-runner', ],
     tests_require=['pytest', ],
     zip_safe=False,
