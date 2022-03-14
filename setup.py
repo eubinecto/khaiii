@@ -48,7 +48,7 @@ class CustomBuild(build):
         os.makedirs(build_dir, exist_ok=True)
         # hot fix
         subprocess.check_call("pip3 install cmake", cwd=build_dir, shell=True)
-        subprocess.check_call(["cmake",  "-E", "env CXXFLAGS=-w cmake .."], cwd=build_dir, shell=True)
+        subprocess.check_call("cmake -E env CXXFLAGS=\"-w\" cmake ..", cwd=build_dir, shell=True)
         subprocess.check_call('make all resource', cwd=build_dir, shell=True)
         shutil.rmtree('khaiii/lib', ignore_errors=True)
         shutil.copytree('{}/lib'.format(build_dir), 'khaiii/lib')
