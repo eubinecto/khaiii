@@ -65,7 +65,7 @@ def readme():
     Returns:
         long description (content of README.md)
     """
-    return open('/Users/eubinecto/Desktop/Projects/Forks/khaiii/README.md', 'r', encoding='UTF-8').read()
+    return open('README.md', 'r', encoding='UTF-8').read()
 
 
 #########
